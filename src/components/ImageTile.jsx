@@ -4,7 +4,7 @@ const ImageTile = ({item}) => {
   return (
     <article className="break-inside-avoid mb-4 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
       <Link
-        to={`/view/${item.id}`}
+        to={`/photo/${item.id}`}
         state={{ url: item.urls.regular, slug: item.slug }}
       >
         <img
