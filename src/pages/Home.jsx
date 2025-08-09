@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_API_KEY;
+const ACCESS_URL = import.meta.env.VITE_UNSPLASH_API_URL;
 
 const Home = () => {
   const [photos, setPhotos] = useState([]);
@@ -20,7 +21,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const res = await axios.get("https://api.unsplash.com/search/photos", {
+      const res = await axios.get(ACCESS_URL, {
         params: { query: searchQuery, per_page: 10, page: pageNum },
         headers: { Authorization: `Client-ID ${ACCESS_KEY}` },
       });

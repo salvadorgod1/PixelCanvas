@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const KEY = import.meta.env.VITE_UNSPLASH_API_KEY;
-const BASE = "https://api.unsplash.com";
+const BASE = import.meta.env.VITE_UNSPLASH_API_BASE;
 
 export async function searchPhotos(query, page = 1, per_page = 10) {
   const res = await axios.get(`${BASE}/search/photos`, {
